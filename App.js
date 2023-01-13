@@ -6,6 +6,8 @@ function App() {
   const [author, setauthor] = useState("");
   const [isbn, setisbn] = useState("");
   const [books, setbooks] = useState([]);
+  const [newtitle, setnewtitle] = useState("");
+
   const addBook = () => {
     axios
       .post("http://localhost:4001/create", {
@@ -23,6 +25,10 @@ function App() {
       setbooks(Response.data);
     });
   };
+
+  const updateDetails=(isbn)=>{
+     axios.put("http://localhost:4001/update",{title:newtitle,isbn:isbn}).then((Response)=>{alert("update")})
+  }
   return (
     <div>
       <div classname="app">
@@ -79,6 +85,12 @@ function App() {
             <h3>isbn:{value.isbn}</h3>
             <h3>author:{value.author}</h3>
             <h3>title:{value.title}</h3>
+            <div>
+              <input type="text" placeholder="title" onChange={(e)=>{
+                setnewtitle(e.target.value)
+              }}></input>
+              <button onClick={()=>{updateDetails(value.isbn)}}>update</button>
+            </div>
           </div>
         );
       })}

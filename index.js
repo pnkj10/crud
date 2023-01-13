@@ -34,5 +34,18 @@ app.post("/create",(req,resp)=>{
             }
         })
     })
+
+    app.put("/update",(req,resp)=>{
+        const isbn=req.body.isbn;
+        const title=req.body.title;
+        db.query("update bookstore set title=? where isbn=?",[title,isbn],(err,result)=>{
+            if(err){
+                console.log(err)
+            }
+            else{
+                resp.send(result);
+            }
+        })
+    })
 })
 app.listen(4001,()=>{console.log("running")});
