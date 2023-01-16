@@ -1,0 +1,17 @@
+//dotnet new webapi -n Name
+
+
+commands to run in backend----->
+dotnet add package MySql.Data
+dotnet add package Microsoft.AspNetCore.Cors
+dotnet build
+dotnet run
+
+commands to run in frontend---->
+
+npm install
+npm install axios
+npm start
+
+//dotnet add package Microsoft.EntityFrameworkCore.Design
+//dotnet add package Microsoft.EntityFrameworkCore.SqlServer

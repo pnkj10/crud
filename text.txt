@@ -1,3 +1,0 @@
-ALTER USER 'wm8afterlogic'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassHere';
-GRANT ALL PRIVILEGES ON wm8afterlogic.* TO 'pro8afterlogic'@'localhost';
-FLUSH PRIVILEGES;
